@@ -1,5 +1,4 @@
 export default function() {
-
   // These comments are here to help you get started. Feel free to delete them.
 
   /*
@@ -23,4 +22,31 @@ export default function() {
 
     http://www.ember-cli-mirage.com/docs/v0.4.x/shorthands/
   */
+  this.get("warranties", () => {
+    return {
+      data: [
+        {
+          type: "warranties",
+          id: 1,
+          attributes: {
+            name: "lorem"
+          }
+        },
+        {
+          type: "warranties",
+          id: 2,
+          attributes: {
+            name: "ipsum"
+          }
+        },
+        {
+          type: "warranties",
+          id: 3,
+          attributes: {
+            name: "dolor"
+          }
+        }
+      ]
+    };
+  });
 }
