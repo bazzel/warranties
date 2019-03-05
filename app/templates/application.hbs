@@ -1,1 +1,20 @@
-{{outlet}}
+{{partial 'toolbar'}}
+{{#paper-sidenav-container class="inner-sidenav"}}
+  {{#paper-sidenav
+    class="md-whiteframe-z2"
+    name="left"
+    position="left"
+    open=leftSideBarOpen
+    lockedOpen=false
+    onToggle=(action (mut leftSideBarOpen))}}
+    {{#paper-content padding=true}}
+      ...
+    {{/paper-content}}
+  {{/paper-sidenav}}
+
+  {{#paper-card-content class="flex"}}
+    <div class="layout-fill layout-align-start-center layout-column" style="height: 500px">
+      {{outlet}}
+    </div>
+  {{/paper-card-content}}
+{{/paper-sidenav-container}}
