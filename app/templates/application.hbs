@@ -1,20 +1,16 @@
-{{partial 'toolbar'}}
-{{#paper-sidenav-container class="inner-sidenav"}}
+{{#paper-sidenav-container class="site-nav-container"}}
   {{#paper-sidenav
-    class="md-whiteframe-z2"
-    name="left"
-    position="left"
-    open=leftSideBarOpen
+    class="md-whiteframe-z2 site-sidenav"
+    open=isSidenavOpen
     lockedOpen=false
-    onToggle=(action (mut leftSideBarOpen))}}
+    onToggle=(action (mut isSidenavOpen))}}
     {{#paper-content padding=true}}
       ...
     {{/paper-content}}
   {{/paper-sidenav}}
+  <div id="main" class="flex layout-column" tabindex="-1" role="main">
+    <PageToolbar @pageTitle="Warranties" />
 
-  {{#paper-card-content class="flex"}}
-    <div class="layout-fill layout-align-start-center layout-column" style="height: 500px">
-      {{outlet}}
-    </div>
-  {{/paper-card-content}}
+    {{outlet}}
+  </div>
 {{/paper-sidenav-container}}

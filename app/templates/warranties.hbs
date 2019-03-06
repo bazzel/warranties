@@ -1,6 +1,10 @@
-<ul>
-  {{#each this.model as |warranty|}}
-    <li>{{warranty.name}}</li>
-  {{/each}}
-</ul>
-{{outlet}}
+{{#paper-content scroll-y=true class="layout-padding flex"}}
+  <div class="doc-content">
+    <ul>
+      {{#each this.model as |warranty|}}
+        <li>{{warranty.name}}</li>
+      {{/each}}
+    </ul>
+  </div>
+  {{outlet}}
+{{/paper-content}}
