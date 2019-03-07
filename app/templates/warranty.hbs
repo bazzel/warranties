@@ -1,0 +1,10 @@
+{{#paper-content scroll-y=true class="layout-padding flex"}}
+  <div class="doc-content">
+    {{#paper-card as |card|}}
+      {{#paper-list}}
+        <WarrantyItem @warranty={{this.model}}/>
+      {{/paper-list}}
+    {{/paper-card}}
+  </div>
+  {{outlet}}
+{{/paper-content}}

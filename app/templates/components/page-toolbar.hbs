@@ -1,14 +1,16 @@
 {{#paper-toolbar class="md-whiteframe-1dp page-main-toolbar" as |toolbar|}}
   {{#toolbar.tools}}
     {{#paper-sidenav-toggle as |toggleAction|}}
-      {{#paper-button onClick=(action toggleAction) iconButton=true}}
+      {{#paper-button  onClick=(action toggleAction) iconButton=true}}
         {{paper-icon "menu"}}
       {{/paper-button}}
     {{/paper-sidenav-toggle}}
     <div class="layout-row flex">
-      <h2>
-        {{pageTitle}}
-      </h2>
+      {{#link-to "index"}}
+        <h2>
+          {{pageTitle}}
+        </h2>
+      {{/link-to}}
     </div>
   {{/toolbar.tools}}
 {{/paper-toolbar}}
