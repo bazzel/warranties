@@ -1,8 +1,13 @@
-<PaperContent @scroll-y=true @class="layout-padding flex">
+{{#paper-content scroll-y=true class="layout-padding flex"}}
   <div class="doc-content">
+    {{#paper-card as |card|}}
+      {{#paper-list}}
       {{#each this.model as |warranty|}}
-        <WarrantyCardItem @warranty={{warranty}}/>
+        <WarrantyItem @warranty={{warranty}}/>
+        {{#unless (eq warranty this.model.lastObject)}} {{paper-divider}} {{/unless}}
       {{/each}}
+      {{/paper-list}}
+    {{/paper-card}}
   </div>
   {{outlet}}
-</PaperContent>
+{{/paper-content}}
