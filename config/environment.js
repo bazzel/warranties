@@ -2,6 +2,9 @@
 
 module.exports = function(environment) {
   let ENV = {
+    DS: {
+      host: "http://localhost:3000"
+    },
     modulePrefix: "warranties",
     environment,
     rootURL: "/",
@@ -48,6 +51,7 @@ module.exports = function(environment) {
 
   if (environment === "production") {
     // here you can enable a production-specific feature
+    ENV.DS.host = "https://warranties-api.herokuapp.com";
   }
 
   return ENV;
