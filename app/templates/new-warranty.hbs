@@ -1,2 +1,10 @@
-Lorem ut quisquam sint libero et. Vel labore in quod alias asperiores ea asperiores Cumque odio minus pariatur vitae rerum alias excepturi Eveniet asperiores atque libero fugiat nihil asperiores! Laboriosam
-{{outlet}}
+{{#paper-content scroll-y=true class="layout-padding flex"}}
+  <div class="doc-content">
+    {{#paper-card as |card|}}
+      {{#card.content}}
+        <h3>Create a new warranty</h3>
+        <WarrantyForm @warranty={{newModel}} @onSubmit={{action "saveWarranty"}}/>
+      {{/card.content}}
+    {{/paper-card}}
+  </div>
+{{/paper-content}}

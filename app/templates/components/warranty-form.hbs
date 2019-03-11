@@ -1,0 +1,9 @@
+{{#paper-form onSubmit=(action "submitChanges") preventDefault=true as |form|}}
+  <div class="layout-row">
+    <div class="layout-column flex-100">
+      {{form.input label="Name" placeholder="Enter name" value=warranty.name onChange=(action (mut warranty.name))}}
+    </div>
+  </div>
+  {{#form.submit-button raised=true primary=true}}Save{{/form.submit-button}}
+{{/paper-form}}
+
