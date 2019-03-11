@@ -3,7 +3,11 @@
     {{#paper-card as |card|}}
       {{#card.content}}
         <h3>Create a new warranty</h3>
-        <WarrantyForm @warranty={{newModel}} @onSubmit={{action "saveWarranty"}}/>
+        <WarrantyForm
+          @warranty={{model}}
+          @errors={{errors}}
+          @onSubmit={{action "save"}}
+          @onCancel={{action "cancel"}}/>
       {{/card.content}}
     {{/paper-card}}
   </div>

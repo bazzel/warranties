@@ -1,9 +1,13 @@
 {{#paper-form onSubmit=(action "submitChanges") preventDefault=true as |form|}}
-  <div class="layout-row">
-    <div class="layout-column flex-100">
-      {{form.input label="Name" placeholder="Enter name" value=warranty.name onChange=(action (mut warranty.name))}}
-    </div>
+  <div class="layout-column">
+    {{form.input
+      label="Name"
+      placeholder="Enter name"
+      value=warranty.name
+      errors=errors.name
+      isTouched=true
+      onChange=(action (mut warranty.name))}}
   </div>
-  {{#form.submit-button raised=true primary=true}}Save{{/form.submit-button}}
+  {{#form.submit-button raised=false primary=true}}Save{{/form.submit-button}}
+  {{#paper-button raised=false onClick=(action "cancelChanges")}}Cancel{{/paper-button}}
 {{/paper-form}}
-

@@ -1,14 +1,22 @@
 import Controller from "@ember/controller";
 
 export default Controller.extend({
-  newModel: {},
   actions: {
-    saveWarranty() {
-      let warranty = this.store.createRecord("warranty", this.newModel);
+    save() {
+      let warranty = this.store.createRecord("warranty", this.model);
 
-      warranty.save().then(() => {
-        this.transitionToRoute("show-warranty", warranty);
-      });
+      warranty
+        .save()
+        .then(() => {
+          this.transitionToRoute("show-warranty", warranty);
+        })
+        .catch(e => {
+          warranty.deleteRecord();
+          this.set("errors", warranty.get("errors"));
+        });
+    },
+    cancel() {
+      this.transitionToRoute("warranties");
     }
   }
 });
