@@ -8,7 +8,8 @@ const Router = EmberRouter.extend({
 
 Router.map(function() {
   this.route("warranties");
-  this.route("warranty", { path: "warranties/:warranty_id" });
+  this.route("show-warranty", { path: "warranties/:warranty_id" });
+  this.route("new-warranty", { path: "warranties/new" });
 });
 
 export default Router;

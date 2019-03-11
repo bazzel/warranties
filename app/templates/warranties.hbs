@@ -3,7 +3,7 @@
     {{#paper-card as |card|}}
       {{#paper-list}}
       {{#each this.model as |warranty|}}
-        {{#link-to "warranty" warranty class="warranty-item"}}
+        {{#link-to "show-warranty" warranty class="warranty-item"}}
           <WarrantyItem @warranty={{warranty}}/>
         {{/link-to}}
         {{#unless (eq warranty this.model.lastObject)}} {{paper-divider}} {{/unless}}
