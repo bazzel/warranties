@@ -9,7 +9,7 @@
         {{#unless (eq warranty this.model.lastObject)}} {{paper-divider}} {{/unless}}
       {{/each}}
       {{/paper-list}}
-      {{#paper-button raised=true fab=true accent=true class="new-warranty-fab"}}{{paper-icon "add" size=24}}{{/paper-button}}
+      {{#paper-button raised=true fab=true accent=true class="new-warranty-fab" onClick=(action "transition")}}{{paper-icon "add" size=24}}{{/paper-button}}
     {{/paper-card}}
   </div>
   {{outlet}}
