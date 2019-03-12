@@ -2,10 +2,10 @@ import Controller from "@ember/controller";
 
 export default Controller.extend({
   actions: {
-    goToNewWarranty() {
+    newWarranty() {
       this.transitionToRoute("new-warranty");
     },
-    goToWarranty(warranty) {
+    showWarranty(warranty) {
       this.transitionToRoute("show-warranty", warranty);
     },
     editWarranty(warranty) {

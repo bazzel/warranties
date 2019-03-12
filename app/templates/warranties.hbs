@@ -5,7 +5,7 @@
         {{#each this.model as |warranty|}}
           <WarrantyItem
             @item={{warranty}}
-            @onClick={{action "goToWarranty" warranty}}
+            @onClick={{action "showWarranty" warranty}}
             @onClickEdit={{action "editWarranty" warranty}}
             />
           {{#unless (eq warranty this.model.lastObject)}} {{paper-divider}} {{/unless}}
@@ -18,7 +18,7 @@
       fab=true
       accent=true
       class="new-warranty-fab"
-      onClick=(action "goToNewWarranty")}}
+      onClick=(action "newWarranty")}}
       {{paper-icon "add" size=24}}
     {{/paper-button}}
   </div>
