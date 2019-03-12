@@ -1,23 +1,24 @@
 {{#paper-content scroll-y=true class="layout-padding flex"}}
   <div class="doc-content">
-    {{#paper-card as |card|}}
-      {{#paper-list}}
-      {{#each this.model as |warranty|}}
-        {{#link-to "show-warranty" warranty class="warranty-item"}}
-          <WarrantyItem @warranty={{warranty}}/>
-        {{/link-to}}
-        {{#unless (eq warranty this.model.lastObject)}} {{paper-divider}} {{/unless}}
-      {{/each}}
-      {{/paper-list}}
-      {{#paper-button
-        raised=true
-        fab=true
-        accent=true
-        class="new-warranty-fab"
-        onClick=(action "transition")}}
-        {{paper-icon "add" size=24}}
-      {{/paper-button}}
-    {{/paper-card}}
+    {{#paper-list}}
+      {{#paper-card}}
+        {{#each this.model as |warranty|}}
+          <WarrantyItem
+            @item={{warranty}}
+            @onClick={{action "goToWarranty" warranty}}
+            />
+          {{#unless (eq warranty this.model.lastObject)}} {{paper-divider}} {{/unless}}
+        {{/each}}
+      {{/paper-card}}
+    {{/paper-list}}
+
+    {{#paper-button
+      raised=true
+      fab=true
+      accent=true
+      class="new-warranty-fab"
+      onClick=(action "goToNewWarranty")}}
+      {{paper-icon "add" size=24}}
+    {{/paper-button}}
   </div>
-  {{outlet}}
 {{/paper-content}}

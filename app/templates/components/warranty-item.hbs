@@ -1,7 +1,7 @@
-{{#paper-item class="md-2-line"}}
+{{#paper-item class="md-2-line" onClick=(action "clickItem")}}
   <img src="https://lorempixel.com/80/80" alt="Tomster" class="md-avatar">
   <div class="md-list-item-text">
-    <h3>{{warranty.name}}</h3>
+    <h3>{{item.name}}</h3>
     <p>Some longer notes here could be here. But they aren't.</p>
   </div>
 {{/paper-item}}
