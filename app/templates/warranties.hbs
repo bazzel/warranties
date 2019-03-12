@@ -6,6 +6,7 @@
           <WarrantyItem
             @item={{warranty}}
             @onClick={{action "goToWarranty" warranty}}
+            @onClickEdit={{action "editWarranty" warranty}}
             />
           {{#unless (eq warranty this.model.lastObject)}} {{paper-divider}} {{/unless}}
         {{/each}}

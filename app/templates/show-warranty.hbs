@@ -9,7 +9,7 @@
             <p>Some longer notes here could be here. But they aren't.</p>
           </div>
           <div class="md-secondary-container">
-            {{#controls.button secondary=true}}Edit{{/controls.button}}
+            {{#controls.button onClick=(action "editWarranty" model)}}Edit{{/controls.button}}
           </div>
         {{/paper-item}}
       {{/paper-list}}

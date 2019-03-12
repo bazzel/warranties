@@ -4,6 +4,9 @@ export default Component.extend({
   actions: {
     clickItem() {
       this.onClick();
+    },
+    clickEdit() {
+      this.onClickEdit();
     }
   }
 });

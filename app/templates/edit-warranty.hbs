@@ -1,0 +1,14 @@
+{{#paper-content scroll-y=true class="layout-padding flex"}}
+  <div class="doc-content">
+    {{#paper-card as |card|}}
+      {{#card.content}}
+        <h3>Edit warranty</h3>
+        <WarrantyForm
+          @warranty={{model}}
+          @errors={{errors}}
+          @onSubmit={{action "save"}}
+          @onCancel={{action "cancel"}}/>
+      {{/card.content}}
+    {{/paper-card}}
+  </div>
+{{/paper-content}}

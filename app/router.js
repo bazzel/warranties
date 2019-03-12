@@ -10,6 +10,7 @@ Router.map(function() {
   this.route("warranties");
   this.route("show-warranty", { path: "warranties/:warranty_id" });
   this.route("new-warranty", { path: "warranties/new" });
+  this.route("edit-warranty", { path: "warranties/:warranty_id/edit" });
 });
 
 export default Router;
