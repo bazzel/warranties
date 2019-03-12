@@ -4,8 +4,10 @@
     <h3>{{item.name}}</h3>
     <p>Some longer notes here could be here. But they aren't.</p>
   </div>
-  {{#controls.button iconButton=true onClick=(action "clickEdit" item)}}
-    {{paper-icon "edit"}}
-    {{#paper-tooltip}}Edit warranty{{/paper-tooltip}}
-  {{/controls.button}}
+  <div class="md-secondary-container">
+    {{#controls.button iconButton=true onClick=(action "clickEdit" item)}}
+      {{paper-icon "edit"}}
+      {{#paper-tooltip}}Edit warranty{{/paper-tooltip}}
+    {{/controls.button}}
+  </div>
 {{/paper-item}}

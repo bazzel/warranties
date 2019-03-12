@@ -1,3 +1,8 @@
-a.warranty-item {
-  text-decoration: none;
+.warranty-item {
+  .md-secondary-container {
+    visibility: hidden;
+  }
+  &:hover .md-secondary-container {
+    visibility: visible;
+  }
 }
