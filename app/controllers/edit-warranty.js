@@ -7,7 +7,7 @@ export default Controller.extend({
       warranty
         .save()
         .then(() => {
-          this.transitionToRoute("show-warranty", warranty);
+          this.transitionBack();
         })
         .catch(e => {
           this.set("errors", warranty.get("errors"));
@@ -15,7 +15,15 @@ export default Controller.extend({
     },
     cancel() {
       this.model.rollbackAttributes();
-      this.transitionToRoute("show-warranty", this.model);
+      this.transitionBack();
     }
+  },
+  transitionBack() {
+    let redirectToURL = this.get("redirectToURL");
+
+    if (redirectToURL === this.get("target").currentURL) {
+      redirectToURL = "warranties";
+    }
+    this.transitionToRoute(redirectToURL);
   }
 });
