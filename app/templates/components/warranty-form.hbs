@@ -6,7 +6,15 @@
       value=warranty.name
       errors=errors.name
       isTouched=true
+    class='layout-fill flex-50'
       onChange=(action (mut warranty.name))}}
+  </div>
+  <div class="layout-column">
+  {{paper-pikaday
+    value=warranty.expiresOn
+    label="Expires on"
+    format=dateFormat
+    onChange=(action (mut warranty.expiresOn))}}
   </div>
   {{#form.submit-button raised=false primary=true}}Save{{/form.submit-button}}
   {{#paper-button raised=false onClick=(action "cancelChanges")}}Cancel{{/paper-button}}
