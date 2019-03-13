@@ -7,6 +7,9 @@
             @item={{warranty}}
             @onClick={{action "showWarranty" warranty}}
             @onClickEdit={{action "editWarranty" warranty}}
+            @onClickDelete={{action "deleteWarranty" warranty}}
+            @onClickUndo={{action "undoDeleteWarranty" warranty}}
+            @onCloseToast={{action "confirmDeleteWarranty" warranty}}
             />
           {{#unless (eq warranty this.model.lastObject)}} {{paper-divider}} {{/unless}}
         {{/each}}

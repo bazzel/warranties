@@ -8,6 +8,15 @@ export default Component.extend({
     },
     clickEdit() {
       this.onClickEdit();
+    },
+    clickDelete() {
+      this.onClickDelete();
+    },
+    clickUndo() {
+      this.onClickUndo();
+    },
+    closeToast() {
+      this.onCloseToast();
     }
   }
 });

@@ -10,6 +10,15 @@ export default Controller.extend({
     },
     editWarranty(warranty) {
       this.transitionToRoute("edit-warranty", warranty);
+    },
+    deleteWarranty(warranty) {
+      warranty.deleteRecord();
+    },
+    undoDeleteWarranty(warranty) {
+      warranty.rollbackAttributes();
+    },
+    confirmDeleteWarranty(warranty) {
+      warranty.save();
     }
   }
 });
