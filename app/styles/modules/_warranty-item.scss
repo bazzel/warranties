@@ -1,8 +1,22 @@
 .warranty-item {
+  cursor: pointer;
+
   .md-secondary-container {
     visibility: hidden;
   }
-  &:hover .md-secondary-container {
-    visibility: visible;
+
+  &:hover {
+    .md-secondary-container {
+      visibility: visible;
+
+      button {
+        &:not([disabled]) {
+          &:hover {
+            background-color: rgba(paper-color($background, "500"), 0.2);
+            color: paper-color($foreground, "1");
+          }
+        }
+      }
+    }
   }
 }

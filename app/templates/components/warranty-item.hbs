@@ -1,9 +1,15 @@
 {{#unless item.isDeleted}}
-  {{#paper-item class="md-2-line" onClick=(action "clickItem") as |controls|}}
+<div {{action "clickItem"}} class="warranty-item">
+  {{#paper-item class="md-2-line" as |controls|}}
     <img src="https://picsum.photos/80/80?blur" alt="Tomster" class="md-avatar">
     <div class="md-list-item-text">
       <h3>{{item.name}}</h3>
       <p>Some longer notes here could be here. But they aren't.</p>
+    </div>
+    <div class="md-list-item-text">
+      <p>
+        <FormattedExpiresOn @expiresOn={{item.expiresOn}} />
+      </p>
     </div>
     <div class="md-secondary-container">
       {{#controls.button iconButton=true onClick=(action "clickEdit" item)}}
@@ -16,6 +22,7 @@
       {{/controls.button}}
     </div>
   {{/paper-item}}
+</div>
 {{else}}
   {{#paper-toast duration=3000 onClose=(action "closeToast") as |toast|}}
   {{#toast.text}}{{item.name}} has been deleted{{/toast.text}}
