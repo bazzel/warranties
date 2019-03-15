@@ -1,0 +1,7 @@
+.expires-on {
+  &.has-expired {
+    span {
+      color: $error-text;
+    }
+  }
+}

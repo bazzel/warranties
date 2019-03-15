@@ -1,5 +1,7 @@
-{{#paper-icon "event_available"}}
-  {{#paper-tooltip}}Hatseflats{{/paper-tooltip}}
-{{/paper-icon}}
-&nbsp;
-{{@expiresOn}}
+{{#if @expiresOn}}
+  {{#paper-icon icon}}
+    {{#paper-tooltip}}{{tooltipText}}{{/paper-tooltip}}
+  {{/paper-icon}}
+  &nbsp;
+  <span>{{moment-format @expiresOn dateFormat}}</span>
+{{/if}}

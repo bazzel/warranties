@@ -3,6 +3,7 @@ import { typeOf } from "@ember/utils";
 import { isPresent } from "@ember/utils";
 
 export default Component.extend({
+  moment: Ember.inject.service(),
   dateFormat: "ddd, MMM Do, YYYY",
   actions: {
     submitChanges() {

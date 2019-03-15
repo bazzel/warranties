@@ -4,6 +4,8 @@ $warn: "red";
 $foreground: "foreground-dark";
 $background: "grey";
 
+$error-text: #B00020;
+
 @import "ember-paper";
 
 @import "layout";
