@@ -1,6 +1,8 @@
 {{#unless item.isDeleted}}
-<div {{action "clickItem"}} class="warranty-item">
-  {{#paper-item class="md-2-line" as |controls|}}
+  {{#paper-item
+    class="md-2-line"
+    onClick=(action "clickItem")
+    hasPrimaryAction=false as |controls|}}
     <img src="https://picsum.photos/80/80?blur" alt="Tomster" class="md-avatar">
     <div class="md-list-item-text">
       <h3>{{item.name}}</h3>
@@ -22,7 +24,6 @@
       {{/controls.button}}
     </div>
   {{/paper-item}}
-</div>
 {{else}}
   {{#paper-toast duration=3000 onClose=(action "closeToast") as |toast|}}
   {{#toast.text}}{{item.name}} has been deleted{{/toast.text}}
