@@ -9,9 +9,7 @@
       <p>Some longer notes here could be here. But they aren't.</p>
     </div>
     <div class="md-list-item-text">
-      <p>
-        <FormattedExpiresOn @expiresOn={{item.expiresOn}} />
-      </p>
+      <FormattedExpiresOn @expiresOn={{item.expiresOn}} />
     </div>
     <div class="md-secondary-container">
       {{#controls.button iconButton=true onClick=(action "clickEdit" item)}}

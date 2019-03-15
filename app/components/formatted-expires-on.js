@@ -4,6 +4,7 @@ import { computed } from "@ember/object";
 export default Component.extend({
   moment: Ember.inject.service(),
   dateFormat: "MMM Do, YYYY",
+  tagName: "p",
   classNames: ["expires-on"],
   classNameBindings: ["hasExpired"],
   hasExpired: computed(function() {

@@ -8,6 +8,9 @@
             <h3>{{model.name}}</h3>
             <p>Some longer notes here could be here. But they aren't.</p>
           </div>
+          <div class="md-list-item-text">
+            <FormattedExpiresOn @expiresOn={{model.expiresOn}} />
+          </div>
           <div class="md-secondary-container">
             {{#controls.button onClick=(action "editWarranty" model)}}Edit{{/controls.button}}
           </div>
